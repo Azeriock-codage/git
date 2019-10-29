@@ -1,45 +1,31 @@
-Pour créer une branch il suffit d'utiliser la commande : git branch
+git --no--pager log -3 --online = permet de voir les logs et de sortir de la console.
 
-Le Head est un pointeur spécial car il permet d'indiquer au Git dans quelle branche on se situe
+git --no-page log -nombre --oneline = permet de voir le nombre commit que l'on choisit et de sortir ensuite de la console.
 
-Pour passer d'une branche à l'autre on utilise la commande git checkout
+git log --author permet de voir les logs d'un auteur en particulier
 
-git checkout -b feature_header permet de déplacer le header sur une branche
+le git log since et before permette de regarder les logs d'un jours précis
 
-git branch -d permet de supprimer une branch et git branch -D permet de forcer la supression d'une Branch
+le git log nom_du_dossier permet de regarder l'historique d'un dossier
 
-La commande git merge permet de mélanger plusieurs branch ensemble par exemple si je suis dans la branch master et que je fais un git merge dev, on mélange dev dans master
+git log -p lui s'applique à l'ensemble des commits.
 
-le git merge dev --no-ff permet de faire un commit de merge même si on est dans une situation sans divergence de branche.
+git log --stat permet de voir les statistiques par rapport au modification faites au projet.
 
-git branch --no-merged permet de lister toutes les branches non mergées.
+git log -E -i --grep = permet de rechercher des logs précis E pour parler des occurences et i pour insensible à la case.
 
-git stash permet de remiser le code non terminé.
+git diff = permet de visualiser la modification d'un fichier avant de l'indexé
 
-git tag -a v1.0 -m " version 1 de l'application" permet de faire un tag annoté
+le Head-1 permet de remonter d'un commit en arrière
 
-git tag v1 permet de faire un tag léger mais est moins utilisé
+Le git restore quant à lui permet de restaurer le fichier dans l'état dans le quel il était avant modification.
 
-git tag -a v1.0.1 -m "version 1.0.1" 9fceb2permet d'étiquetter après coup sur un commit donné.
+le git reset HEAD-1 Permet d'annuler le dernier commit et met tout dans le WD sans perte
 
-git show permet de voir un tag annoté
+git reset --soft HEAD-1 fait à peu près la même chose sauf qu'il met tout dans la staging area sans perte
 
-git --bare init permet de commencer à créer un serveur git
+git reset --hard HEAD~1 Permet d'annuler le dernier commit et il supprime toute les modifications appliqué
 
-git remote sert à lister les dépots distants
+ git checkout permet de retourner à l'état initial d'un fichier
 
-git remote -v permet de lister en mode verbeux
-
-git remote add [alias] [chemin_du_serveur_distant] permet d'ajouter un serveur distant
-
-git remote rm alias / git remote rename alias news_alias permet de renommer un dépôt distant où  de le supprimer
-
-git fetch origin permet de récupérer la branche distante localement sans fusion avec sa branche branche master.
-
- git log master..origin/master permet de comparer les différences entre master local et disant.
-
- Le git pull est un équivalent à un git fetch + git merge
-
- git push [nom-distant] [nom-de-branche] permet de publier le git sur un serveur distant
-
- git remote show origin permet d'inspecter un dépôt distant.
+ La commande git revert permet de crée un commit revert d'annulation du dernier du dernier commit réalisé.
