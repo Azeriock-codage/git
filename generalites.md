@@ -1,45 +1,43 @@
-Pour créer une branch il suffit d'utiliser la commande : git branch
+git commit = La commande git commit sert à enregistrer dans le dépôt les modifications apportées
 
-Le Head est un pointeur spécial car il permet d'indiquer au Git dans quelle branche on se situe
+ git config --global user.name 
+ git config --global user.email ==> Deux commandes qui permette de rentrer notre mail et notre identifiant Git
 
-Pour passer d'une branche à l'autre on utilise la commande git checkout
+ git config --local user.name 
+ git config --local user-email == > Les deux commandes sont à utiliser quand on veut ce focus sur un dépot en particulier 
 
-git checkout -b feature_header permet de déplacer le header sur une branche
+ Le git init permet d'initialiser le début de l'invité de commande git
 
-git branch -d permet de supprimer une branch et git branch -D permet de forcer la supression d'une Branch
+le git Status permet de vérifier que tout soit en état de marche dans notre fichier versionné.
 
-La commande git merge permet de mélanger plusieurs branch ensemble par exemple si je suis dans la branch master et que je fais un git merge dev, on mélange dev dans master
+Le git add permet de rentrer un dossier dans notre dépot.
 
-le git merge dev --no-ff permet de faire un commit de merge même si on est dans une situation sans divergence de branche.
+git rm --cached permet lui de desindexé un menu
 
-git branch --no-merged permet de lister toutes les branches non mergées.
+git log lui permet d'avoir un appercu des modifications sur chaque commit.
 
-git stash permet de remiser le code non terminé.
+git add . pour ajouter l'ensemble des fichiers au dépot.
 
-git tag -a v1.0 -m " version 1 de l'application" permet de faire un tag annoté
+git add - A pour selectionner plus précisément.
 
-git tag v1 permet de faire un tag léger mais est moins utilisé
+git log master. .origin / master pour voir la différence entre deux branches
 
-git tag -a v1.0.1 -m "version 1.0.1" 9fceb2permet d'étiquetter après coup sur un commit donné.
+git log -nombre pour voir le nombre de commit qu'on a choisi
 
-git show permet de voir un tag annoté
+git log -p -nombre log avec différence pourr chaque commit sur le npùbre défini 
 
-git --bare init permet de commencer à créer un serveur git
+git log --stat pour voir les stars sur les modifs des commits
 
-git remote sert à lister les dépots distants
+le suite de commande git blame elle permet de savoir qui a fait une modif avec une commande telle que :
+git blame -L 40,60 readme.md pour voir qui a fait les modif sur ces lignes.
 
-git remote -v permet de lister en mode verbeux
+git mv nom_du_premier_ficher rename_du_ficher pour modifier le nom d'un fichier et qu'il soit pris en compte par Git.
 
-git remote add [alias] [chemin_du_serveur_distant] permet d'ajouter un serveur distant
+Le git rm quant à lui permet de supprimer un  ficher.
 
-git remote rm alias / git remote rename alias news_alias permet de renommer un dépôt distant où  de le supprimer
+git rm --cached permet de ne plus suivre un fichier
 
-git fetch origin permet de récupérer la branche distante localement sans fusion avec sa branche branche master.
-
- git log master..origin/master permet de comparer les différences entre master local et disant.
-
- Le git pull est un équivalent à un git fetch + git merge
-
- git push [nom-distant] [nom-de-branche] permet de publier le git sur un serveur distant
-
- git remote show origin permet d'inspecter un dépôt distant.
+le gitignore quant à lui est un dossier à crée à la racine du dossier qui permet d'ignorer certains fichier dans ses dossiers il suffit d'écrire sa racine, son nom où son .
+ Exemple: si j'écris vendor dans mon dossier gitignore, tout les fichiers vendors seront supprimés.
+git config --local user.name 
+git config --local user.email ==> Dans la situation présente cette commande nous permet de changer le pseudo qui était déjà présent.
